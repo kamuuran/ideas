@@ -1,0 +1,23 @@
+<svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="17" height="12">
+<rect width="17" height="11.9996" rx="2" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 3.99987H17V0H0V3.99987Z" fill="#24AAD5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 12H17V8.00011H0V12Z" fill="#21BF75"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.99947H17V3.9996H0V7.99947Z" fill="#ED1845"/>
+<g filter="url(#filter0_d)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.50005 7.19973C8.74997 7.19973 8.98225 7.12512 9.17533 6.99721C9.1528 6.99869 9.13006 6.99945 9.10715 6.99945C8.54829 6.99945 8.09525 6.55175 8.09525 5.99948C8.09525 5.44721 8.54829 4.99951 9.10715 4.99951C9.12974 4.99951 9.15215 5.00024 9.17437 5.00168C8.98148 4.87417 8.74955 4.7998 8.50005 4.7998C7.82942 4.7998 7.28577 5.33705 7.28577 5.99977C7.28577 6.66249 7.82942 7.19973 8.50005 7.19973ZM9.7141 5.9996C9.7141 6.2205 9.53288 6.39958 9.30933 6.39958C9.08579 6.39958 8.90457 6.2205 8.90457 5.9996C8.90457 5.77869 9.08579 5.59961 9.30933 5.59961C9.53288 5.59961 9.7141 5.77869 9.7141 5.9996Z" fill="white"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" x="7.28577" y="4.7998" width="2.42833" height="3.39992" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+<feOffset dy="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>
