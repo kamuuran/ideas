@@ -148,7 +148,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 500px) {
   #app {
-    // height: 100%;
+    height: 100%;
   }
   .app.mobile {
     height: auto;
