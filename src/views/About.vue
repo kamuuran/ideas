@@ -67,10 +67,9 @@
       <span>İdeyalarınız gözləməli deyil.</span><br />
       Bizə qoşulub, iri addımlarla irəliləməyə bugün başlayaq!
     </p>
-
-    <div class="join-button">
-      <router-link to="/form">Qoşulmaq istərdim</router-link>
-    </div>
+    <router-link to="form">
+      <div class="join-button">Qoşulmaq istərdim</div></router-link
+    >
   </div>
 </template>
 
@@ -152,12 +151,11 @@ ul {
   margin-top: 32px;
   cursor: pointer;
   outline: none;
-
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    color: #ffffff;
-  }
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
 }
 </style>

@@ -2,31 +2,49 @@
   <div class="home desktop" id="home">
     <p class="info-text-1">Make your ideas <span>alive</span></p>
 
-    <p class="info-text-2">İstedadlı gəncləri birləşdirən cəmiyyət</p>
+    <p class="info-text-2">{{ loca.communityForTalentedEntrepreneurs }}</p>
 
-    <p class="info-text-3">
-      Biz, <span>Ideas.Foundation</span>, ideaları həyata keçirtmək üçün öz
-      bacarıq və təcrübəmizi təklif edirik
-    </p>
+    <p class="info-text-3" id="weOfferOurSkillsAndExperiences"></p>
 
-    <p class="info-text-4">Bizə qoşulanlar:</p>
+    <p class="info-text-4">{{ loca.joinedUs }}</p>
 
     <div>
-      <img src="@/assets/followaz.svg" alt="logo" class="follow-az" />
-    </div>
-    <div>
-      <img src="@/assets/logo_small.png" alt="logo" class="logo-small" />
+      <a href="https://follow.az" target="_blank">
+        <img src="@/assets/followaz.svg" alt="logo" class="follow-az"
+      /></a>
     </div>
 
-    <div class="join-button">
-      <router-link to="/form">Qoşulmaq istərdim</router-link>
+    <div>
+      <a href="https://gamers.az" target="_blank">
+        <img src="@/assets/logo_small.png" alt="logo" class="logo-small" />
+      </a>
     </div>
+    <router-link to="form">
+      <div class="join-button">{{ loca.IWantToJoin }}</div></router-link
+    >
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "Home",
+  mounted() {
+    document.getElementById(
+      "weOfferOurSkillsAndExperiences"
+    ).innerHTML = this.loca.weOfferOurSkillsAndExperiences;
+  },
+  computed: {
+    ...mapState(["loca"]),
+  },
+  watch: {
+    loca() {
+      document.getElementById(
+        "weOfferOurSkillsAndExperiences"
+      ).innerHTML = this.loca.weOfferOurSkillsAndExperiences;
+    },
+  },
 };
 </script>
 
@@ -96,13 +114,12 @@ export default {
     margin-top: 32px;
     cursor: pointer;
     outline: none;
-
-    a {
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-      color: #ffffff;
-    }
+  }
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
   }
 }
 

@@ -1,16 +1,11 @@
 <template>
   <div class="Form">
-    <p class="info-text-1">
-      Mənim ideam<br />
-      <span style="font-style: italic; font-size: 16px; font-weight: 800"
-        >Silicon Valley</span
-      >-də yaranan idealardan geri qalmır!
-    </p>
+    <p class="info-text-1" id="myIdeaAsGoodAsSliconValleyIdeas"></p>
     <div class="form-group">
       <input
         type="text"
         class="name-surname"
-        placeholder="Ad Soyad"
+        :placeholder="loca.fullName"
         v-model="name"
       />
       <img src="@/assets/avatar.svg" alt="avatar" />
@@ -35,7 +30,7 @@
         name="note"
         id="note"
         class="note"
-        placeholder="Layihələriniz və bacarıqlarınız varsa qeyd edə bilərsiniz"
+        :placeholder="loca.youCanWriteUsAboutYourProjectsOrYouself"
         v-model="note"
       ></textarea>
     </div>
@@ -45,12 +40,14 @@
       :class="{ passive: !formIsValid }"
       @click="sendRequest"
     >
-      Mən istedadam!
+      {{ loca.amTalent }}
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   data() {
     return {
@@ -64,7 +61,7 @@ export default {
   methods: {
     sendRequest() {
       if (this.formIsValid) {
-        this.$router.push("./finish");
+        this.$router.push("finish");
       }
     },
   },
@@ -74,13 +71,24 @@ export default {
       top: 0, //scroll to the bottom of the element
       behavior: "smooth", //auto, smooth, initial, inherit
     });
+    document.getElementById(
+      "myIdeaAsGoodAsSliconValleyIdeas"
+    ).innerHTML = this.loca.myIdeaAsGoodAsSliconValleyIdeas;
   },
   computed: {
+    ...mapState(["loca"]),
     formIsValid() {
       return !!(
-        this.note &&
-        (this.name || this.facebook || this.instagram || this.linkedin)
+        this.name &&
+        (this.note || this.facebook || this.instagram || this.linkedin)
       );
+    },
+  },
+  watch: {
+    loca() {
+      document.getElementById(
+        "myIdeaAsGoodAsSliconValleyIdeas"
+      ).innerHTML = this.loca.myIdeaAsGoodAsSliconValleyIdeas;
     },
   },
 };
@@ -180,7 +188,7 @@ export default {
   padding: 9px 15px;
   font-weight: 500;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
   box-sizing: border-box;
   resize: none;
 }

@@ -1,11 +1,6 @@
 <template>
   <div class="finish">
-    <p class="info-text-1">
-      Mənim ideam<br />
-      <span style="font-style: italic; font-size: 16px; font-weight: 800"
-        >Silicon Valley</span
-      >-də yaranan idealardan geri qalmır!
-    </p>
+    <p class="info-text-1" id="myIdeaAsGoodAsSliconValleyIdeas"></p>
 
     <div class="animation">
       <lottie-animation
@@ -16,9 +11,9 @@
         :speed="1"
       />
     </div>
-    <p class="info-text-2">Müraciətiniz ulduzlararası səyahət edir</p>
+    <p class="info-text-2">{{ loca.yourMessageIsTravellingThroughTheSpace }}</p>
     <div class="thanks-message">
-      <span>Sizə təşəkkür edirik </span>
+      <span> {{ loca.thankYou }}</span>
       <img src="@/assets/heart.svg" alt="heart" />
     </div>
   </div>
@@ -27,6 +22,7 @@
 
 <script>
 import LottieAnimation from "lottie-web-vue"; // import lottie-web-vue
+import { mapState } from "vuex";
 
 export default {
   name: "Finish",
@@ -39,6 +35,19 @@ export default {
       top: 0, //scroll to the bottom of the element
       behavior: "smooth", //auto, smooth, initial, inherit
     });
+    document.getElementById(
+      "myIdeaAsGoodAsSliconValleyIdeas"
+    ).innerHTML = this.loca.myIdeaAsGoodAsSliconValleyIdeas;
+  },
+  computed: {
+    ...mapState(["loca"]),
+  },
+  watch: {
+    loca() {
+      document.getElementById(
+        "myIdeaAsGoodAsSliconValleyIdeas"
+      ).innerHTML = this.loca.myIdeaAsGoodAsSliconValleyIdeas;
+    },
   },
 };
 </script>

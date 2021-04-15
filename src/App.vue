@@ -1,17 +1,13 @@
 <template>
   <div id="app" class="app">
     <div class="container" id="container">
-      <img
-        src="@/assets/background.svg"
-        alt="logo"
-        class="background-vawe"
-        id="background-vawe"
-      />
-      <img
-        src="@/assets/ideasfoundation.svg"
-        alt="logo"
-        class="ideas-foundation-logo"
-      />
+      <router-link to="home">
+        <img
+          src="@/assets/ideasfoundation.svg"
+          alt="logo"
+          class="ideas-foundation-logo"
+        />
+      </router-link>
       <img src="@/assets/left-vawe.svg" alt="logo" class="left-vawe" />
       <img src="@/assets/left-vawe.svg" alt="logo" class="right-vawe" />
       <router-view />
@@ -39,14 +35,14 @@ export default {
       // false for not mobile device
       document.getElementById("app").className = "app desktop";
     }
-
     document.getElementById("container").addEventListener("scroll", (e) => {
+      document.getElementById("container").style.backgroundPositionY =
+        0 - 65 - e.target.scrollTop + "px";
       if (e.target.scrollTop > 250) {
         document.getElementById("container").className = "container sticky";
       } else {
         document.getElementById("container").className = "container";
       }
-      // Update the old value
     });
   },
 };
@@ -75,31 +71,39 @@ body::-webkit-scrollbar {
 }
 .ideas-foundation-logo {
   width: 315px;
-  margin-top: 63px;
+  margin-top: 35px;
 }
 .container {
-  width: 375px;
-  height: 760px;
+  width: 376px;
+  height: 761px;
   margin: 0 auto;
   position: relative;
   box-sizing: border-box;
   overflow: scroll;
   text-align: center;
   padding: 0 15px;
+
+  background: url("./assets/background.svg");
+  background-position-y: -65px;
+  // background-position-y: 10px;
+  // background-size: 250px;
+  // background-position:center;
+  // background-repeat:no-repeat;
+  background-size: cover;
 }
 
 .left-vawe {
   position: fixed;
-  top: -2px;
-  left: 0;
+  top: 2px;
+  left: -2px;
   width: 100vh;
   transform: rotate(90deg);
   transform-origin: 8%;
 }
 .right-vawe {
   position: fixed;
-  bottom: -2px;
-  right: 0;
+  bottom: 2px;
+  right: -2px;
   width: 100vh;
   transform: rotate(270deg) scaleX(-1);
   transform-origin: 92%;
@@ -113,9 +117,9 @@ body::-webkit-scrollbar {
 }
 
 .background-vawe {
-  width: 375px;
+  width: 100%;
   position: absolute;
-  top: -25px;
+  top: -70px;
   left: 0;
   z-index: -1;
 }
@@ -137,7 +141,7 @@ body::-webkit-scrollbar {
       height: 539px;
       .background-vawe {
         width: 266px;
-        top: 13px;
+        top: -25px;
       }
     }
     .iphone {
@@ -147,19 +151,22 @@ body::-webkit-scrollbar {
 }
 
 @media only screen and (max-width: 500px) {
+  #app {
+    // height: 100%;
+  }
   .app.mobile {
-    height: 100vh;
+    height: 100%;
     .ideas-foundation-logo {
       width: 280px;
-      margin-top: 63px;
+      margin-top: 35px;
     }
     .container {
       width: 100%;
-      height: 100vh;
+      height: 100%;
 
       .background-vawe {
         width: 100%;
-        top: -20px;
+        top: -70px;
       }
     }
     .iphone {
@@ -182,7 +189,7 @@ body::-webkit-scrollbar {
 .sticky {
   background: linear-gradient(
     270deg,
-    rgba(252, 143, 52, 1)  0%,
+    rgba(252, 143, 52, 1) 0%,
     rgba(245, 203, 107, 1) 100%
   ) !important;
 }

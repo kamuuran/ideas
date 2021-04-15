@@ -9,22 +9,23 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/:id?/home',
     name: 'Home',
-    component: Home
+    component: Home,
+    exact: true
   },
   {
-    path: '/form',
+    path: '/:id?/form',
     name: 'Form',
-    component: Form
+    component: Form,
   },
   {
-    path: '/finish',
+    path: '/:id?/finish',
     name: 'Finish',
     component: Finish
   },
   {
-    path: '/about',
+    path: '/:id?/about',
     name: 'About',
     component: About
   },
@@ -34,6 +35,20 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+router.beforeEach((to, from, next) => {
+  let lang = localStorage.getItem('language')
+  lang = lang ? lang : "az";
+  if (!to.params.id && to.path == '/') {
+    next(lang + '/home');
+  } else if (to.path == '/en' || to.path == '/az' || to.path == '/ru') {
+    next(to.path + '/home');
+  } else if (!to.params.id && to.path != '/form' && to.path != '/finish' && to.path != '/finish' && to.path != '/about' && to.path != '/home') {
+    next(lang + '/home');
+  } else if (!to.params.id && (to.path == '/form' || to.path == '/finish' || to.path == '/finish' || to.path == '/about' || to.path == '/home')) {
+    next(lang + to.path);
+  }
+  next()
 })
 
 export default router

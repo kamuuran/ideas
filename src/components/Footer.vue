@@ -1,8 +1,8 @@
 <template>
   <footer>
-    <span>Hüquqlar qorunur © 2020 - {{ loca.title }}</span>
+    <span>{{ loca.copyright }}</span>
     <div class="flag-and-about-container">
-      <span><router-link to="/about">Haqqımızda</router-link></span>
+      <span><router-link to="about">{{ loca.about }}</router-link></span>
       <div class="flag-container" @click="changeLang(1)">
         <img
           class="flag"
@@ -51,15 +51,30 @@ export default {
       return require("@/assets/" + icon);
     },
     changeLang(index) {
-      index = (this.selected + 1) % 3
+      index = (this.selected + 1) % 3;
       this.selected = index;
       localStorage.setItem("language", this.options[index].lang);
       this.updateLoca(this.options[index].lang);
+      this.$router.replace({ params: { id: this.options[index].lang } });
     },
   },
   mounted() {
     let language = localStorage.getItem("language");
+    var userLang = navigator.language || navigator.userLanguage;
+    if (!language) {
+      if (userLang == "en-US") language = "en";
+      if (userLang == "tr-TR") language = "az";
+      if (userLang == "ru-RU") language = "ru";
+    }
     language = language ? language : "az";
+    if (
+      this.$route.params.id == "az" ||
+      this.$route.params.id == "en" ||
+      this.$route.params.id == "ru"
+    ) {
+      language = this.$route.params.id;
+    }
+    localStorage.setItem("language", language);
     const index = this.options.findIndex((item) => item.lang === language);
     this.selected = index;
     this.updateLoca(language);
