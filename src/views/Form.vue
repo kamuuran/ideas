@@ -4,25 +4,29 @@
     <div class="form-group">
       <input
         type="text"
-        class="name-surname"
+        class="input-fields"
         :placeholder="loca.fullName"
         v-model="name"
       />
       <img src="@/assets/avatar.svg" alt="avatar" />
     </div>
+    <div class="form-group">
+      <input type="text" class="input-fields" v-model="mail" placeholder="name@example.com" />
+      <img src="@/assets/mail.svg" alt="icon" />
+    </div>
     <div class="form-group social">
-      <input type="text" class="name-surname" v-model="linkedin" />
-      <img src="@/assets/linkedin.svg" alt="avatar" />
+      <input type="text" class="input-fields" v-model="linkedin" />
+      <img src="@/assets/linkedin.svg" alt="icon" />
       <span>@</span>
     </div>
     <div class="form-group social">
-      <input type="text" class="name-surname" v-model="instagram" />
-      <img src="@/assets/instagram.svg" alt="avatar" />
+      <input type="text" class="input-fields" v-model="instagram" />
+      <img src="@/assets/instagram.svg" alt="icon" />
       <span>@</span>
     </div>
     <div class="form-group social">
-      <input type="text" class="name-surname" v-model="facebook" />
-      <img src="@/assets/facebook.svg" alt="avatar" />
+      <input type="text" class="input-fields" v-model="facebook" />
+      <img src="@/assets/facebook.svg" alt="icon" />
       <span>@</span>
     </div>
     <div class="form-group social">
@@ -52,6 +56,7 @@ export default {
   data() {
     return {
       name: "",
+      mail: "",
       linkedin: "",
       instagram: "",
       facebook: "",
@@ -79,7 +84,7 @@ export default {
     ...mapState(["loca"]),
     formIsValid() {
       return !!(
-        this.name &&
+        this.mail &&
         (this.note || this.facebook || this.instagram || this.linkedin)
       );
     },
@@ -148,15 +153,14 @@ export default {
 .form-group.social {
   span {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 12px;
     left: 45px;
     font-weight: 500;
     font-size: 15px;
     color: rgba(255, 255, 255, 0.6);
   }
 }
-.name-surname {
+.input-fields {
   width: 100%;
   height: 45px;
   background: rgba(255, 255, 255, 0.1);
@@ -165,15 +169,15 @@ export default {
   outline: none;
   padding-left: 45px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   color: #ffffff;
   border: none;
 }
-.name-surname:focus {
+.input-fields:focus {
   border: 1px solid #ffffff;
 }
 .form-group.social {
-  .name-surname {
+  .input-fields {
     padding-left: 65px;
   }
 }

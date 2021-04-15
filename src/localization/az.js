@@ -5,9 +5,9 @@ function getYear() {
 const az = {
     'title': 'basliq',
     'copyright': `Hüquqlar qorunur © 2020-${getYear()}`,
-    'makeYourIdeasAlive': 'İdealara həyat verin',
+    'makeYourIdeasAlive': 'İdealara <span style="font-style: italic; font-weight: 800">həyat</span> verin',
     'communityForTalentedEntrepreneurs': 'İstedadlı gəncləri birləşdirən cəmiyyət',
-    'weOfferOurSkillsAndExperiences': 'Biz, <span>Ideas.Foundation</span>, ideyaları həyata keçirtmək üçün öz bacarıq və təcrübəmizi təklif edirik',
+    'weOfferOurSkillsAndExperiences': 'Biz, <span style="font-style: italic; font-weight: 800">Ideas.Foundation</span>, ideyaları həyata keçirtmək üçün öz bacarıq və təcrübəmizi təklif edirik',
     'joinedUs': 'Bizə qoşulanlar:',
     'IWantToJoin': 'Qoşulmaq istəyirəm',
     'about': 'Haqqımızda',

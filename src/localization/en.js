@@ -5,7 +5,7 @@ function getYear() {
 const en = {
     'title': 'basliq',
     'copyright': `All rights reserved © 2020-${getYear()}`,
-    'makeYourIdeasAlive': 'Make your ideas alive',
+    'makeYourIdeasAlive': 'Make your ideas <span style="font-style: italic; font-weight: 800">alive</span>',
     'communityForTalentedEntrepreneurs': 'Community for talented entrepreneurs',
     'weOfferOurSkillsAndExperiences': 'We, <span>Ideas.Foundation</span>, offer our own skills and experience to implement your ideas',
     'joinedUs': 'Joined us::',

@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app">
     <div class="container" id="container">
-      <router-link to="home">
+      <router-link to="./">
         <img
           src="@/assets/ideasfoundation.svg"
           alt="logo"
@@ -63,7 +63,6 @@ body::-webkit-scrollbar {
 }
 #app {
   font-family: "Montserrat", sans-serif;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,6 +71,7 @@ body::-webkit-scrollbar {
 .ideas-foundation-logo {
   width: 315px;
   margin-top: 35px;
+  margin-bottom: 20px;
 }
 .container {
   width: 376px;
@@ -82,14 +82,10 @@ body::-webkit-scrollbar {
   overflow: scroll;
   text-align: center;
   padding: 0 15px;
-
   background: url("./assets/background.svg");
   background-position-y: -65px;
-  // background-position-y: 10px;
-  // background-size: 250px;
-  // background-position:center;
-  // background-repeat:no-repeat;
   background-size: cover;
+  padding-bottom: 10px;
 }
 
 .left-vawe {
@@ -155,7 +151,7 @@ body::-webkit-scrollbar {
     // height: 100%;
   }
   .app.mobile {
-    height: 100%;
+    height: auto;
     .ideas-foundation-logo {
       width: 280px;
       margin-top: 35px;

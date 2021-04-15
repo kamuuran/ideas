@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/:id?/home',
+    path: '/:id?',
     name: 'Home',
     component: Home,
     exact: true
@@ -39,14 +39,20 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   let lang = localStorage.getItem('language')
   lang = lang ? lang : "az";
+  console.log(to.params.id);
+  console.log(to.path);
   if (!to.params.id && to.path == '/') {
-    next(lang + '/home');
+    next(lang);
   } else if (to.path == '/en' || to.path == '/az' || to.path == '/ru') {
-    next(to.path + '/home');
-  } else if (!to.params.id && to.path != '/form' && to.path != '/finish' && to.path != '/finish' && to.path != '/about' && to.path != '/home') {
-    next(lang + '/home');
-  } else if (!to.params.id && (to.path == '/form' || to.path == '/finish' || to.path == '/finish' || to.path == '/about' || to.path == '/home')) {
+    next(to.path + '/');
+  } else if (!to.params.id && to.path != '/form' && to.path != '/finish' && to.path != '/about' && to.path != '/') {
+    next(lang + '/');
+  } else if (!to.params.id && (to.path == '/form' || to.path == '/finish' || to.path == '/about' || to.path == '/')) {
     next(lang + to.path);
+  } else if (to.params.id == 'form' || to.params.id == 'finish' || to.params.id == 'about' || to.params.id == '/') {
+    next(lang + to.path);
+  } else if ((to.params.id != 'ru' && to.params.id != 'en' && to.params.id != 'az') && to.path != '/form' && to.path != '/finish' && to.path != '/about' && to.path != '/') {
+    next(lang + '/');
   }
   next()
 })
