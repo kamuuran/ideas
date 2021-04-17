@@ -62,7 +62,7 @@
 
     <p
       class="info-text-1-content"
-      style="text-align: center; width: 70%; margin: 0 auto"
+      style="text-align: center; width: 70%; margin: 0 auto; font-size: 16px"
     >
       <span>İdeyalarınız gözləməli deyil.</span><br />
       Bizə qoşulub, iri addımlarla irəliləməyə bugün başlayaq!
@@ -80,8 +80,8 @@ export default {
   mounted() {
     var divElement = document.getElementById("container");
     divElement.scroll({
-      top: 0, //scroll to the bottom of the element
-      behavior: "smooth", //auto, smooth, initial, inherit
+      top: 0,
+      behavior: "smooth",
     });
   },
 };
@@ -98,7 +98,7 @@ export default {
 }
 .info-text-1-content {
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 180%;
   text-align: left;
   color: #ffffff;
@@ -122,6 +122,9 @@ ul {
 .quote-container {
   position: relative;
   width: 100%;
+  .info-text-1-content {
+    font-size: 13px;
+  }
   img {
     width: 23px;
     height: 18px;

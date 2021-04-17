@@ -12,7 +12,7 @@ const en = {
     'IWantToJoin': 'I want to join',
     'allRightsReserved': 'All rights reserved',
     'about': 'About',
-    'myIdeaAsGoodAsSliconValleyIdeas': 'My idea is as good as ideas created in <span style="font-style: italic; font-size: 16px; font-weight: 800">Solicon Valley</span>',
+    'myIdeaAsGoodAsSliconValleyIdeas': 'My idea is as good as ideas created in <span style="font-style: italic; font-size: 16px; font-weight: 800">Silicon Valley</span>',
     'fullName': 'Full name',
     'youCanWriteUsAboutYourProjectsOrYouself': 'You can write us about your projects or youself',
     'amTalent': 'I am a talent!',

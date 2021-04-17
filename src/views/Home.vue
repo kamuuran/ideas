@@ -131,13 +131,4 @@ export default {
     }
   }
 }
-
-// @media only screen and (max-width: 375px) {
-//   .home {
-//     .iphone {
-//       display: none;
-//       width: 300px;
-//     }
-//   }
-// }
 </style>

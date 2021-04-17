@@ -21,7 +21,7 @@
 
 
 <script>
-import LottieAnimation from "lottie-web-vue"; // import lottie-web-vue
+import LottieAnimation from "lottie-web-vue";
 import { mapState } from "vuex";
 
 export default {
@@ -32,8 +32,8 @@ export default {
   mounted() {
     var divElement = document.getElementById("container");
     divElement.scroll({
-      top: 0, //scroll to the bottom of the element
-      behavior: "smooth", //auto, smooth, initial, inherit
+      top: 0,
+      behavior: "smooth",
     });
     document.getElementById(
       "myIdeaAsGoodAsSliconValleyIdeas"
@@ -68,13 +68,8 @@ export default {
   color: #ffffff;
 }
 .animation {
-  // width: 150%;
-  // transform: scale(1.5);
   position: relative;
   widows: 100%;
-
-  // left: 50%;
-  // transform: translateX(-50%);
 }
 
 .thanks-message {

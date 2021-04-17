@@ -11,7 +11,12 @@
       <img src="@/assets/avatar.svg" alt="avatar" />
     </div>
     <div class="form-group">
-      <input type="text" class="input-fields" v-model="mail" placeholder="name@example.com" />
+      <input
+        type="text"
+        class="input-fields"
+        v-model="mail"
+        placeholder="name@example.com"
+      />
       <img src="@/assets/mail.svg" alt="icon" />
     </div>
     <div class="form-group social">
@@ -41,17 +46,18 @@
 
     <div
       class="join-button"
-      :class="{ passive: !formIsValid }"
+      :class="{ passive: !formIsValid || loading }"
       @click="sendRequest"
     >
-      {{ loca.amTalent }}
+      <p v-show="!loading">{{ loca.amTalent }}</p>
+      <img src="@/assets/loading-spinner.svg" alt="loading" v-show="loading" />
     </div>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-
+import Email from "@/smtp.js";
 export default {
   data() {
     return {
@@ -61,20 +67,56 @@ export default {
       instagram: "",
       facebook: "",
       note: "",
+      loading: false,
     };
   },
   methods: {
     sendRequest() {
       if (this.formIsValid) {
-        this.$router.push("finish");
+        this.loading = true;
+        const body = `
+                  <html>
+                    <head>
+                        <title>HTML-E-Mail mit PHP erstellen</title>
+                    </head>
+                    <body>
+                      <div style="width: 100%;">
+                        <b>Linkedin</b> : <a href="${this.linkedin}" style="color: blue;">${this.linkedin}</a><br></br>
+                        <b>Instagram</b> : <a href="${this.instagram}" style="color: blue;">${this.instagram}</a><br></br>
+                        <b>Facebook</b> : <a href="${this.facebook}" style="color: blue;">${this.facebook}</a><br></br>
+                        <b>Mail: </b>${this.mail}<br></br>
+                        <b>Note: </b>+${this.note}
+                      </div>
+                    </body>
+                  </html>
+`;
+
+        Email.send({
+          Host: "smtp.mail.ru",
+          Username: "necefzade.elish@mail.ru",
+          Password: "NElis19930503453245",
+          To: "necefzade.elish@gmail.com",
+          From: "necefzade.elish@mail.ru",
+          Subject: "This is the subject",
+          Body: body,
+        })
+          .then((response) => {
+            this.loading = false;
+            if (response == "OK") {
+              this.$router.push("finish");
+            }
+          })
+          .catch(() => {
+            this.loading = false;
+          });
       }
     },
   },
   mounted() {
     var divElement = document.getElementById("container");
     divElement.scroll({
-      top: 0, //scroll to the bottom of the element
-      behavior: "smooth", //auto, smooth, initial, inherit
+      top: 0,
+      behavior: "smooth",
     });
     document.getElementById(
       "myIdeaAsGoodAsSliconValleyIdeas"
@@ -191,7 +233,7 @@ export default {
   border: none;
   padding: 9px 15px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   color: #ffffff;
   box-sizing: border-box;
   resize: none;
@@ -216,6 +258,11 @@ export default {
   &.passive {
     opacity: 0.5;
     cursor: default;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
   }
 }
 </style>

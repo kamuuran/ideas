@@ -1,19 +1,20 @@
 <template>
-  <div id="app" class="app">
-    <div class="container" id="container">
-      <router-link to="./">
+  <div>
+    <div id="app" class="app">
+      <div class="container" id="container">
         <img
           src="@/assets/ideasfoundation.svg"
           alt="logo"
           class="ideas-foundation-logo"
+          @click="goToMainPage"
         />
-      </router-link>
-      <img src="@/assets/left-vawe.svg" alt="logo" class="left-vawe" />
-      <img src="@/assets/left-vawe.svg" alt="logo" class="right-vawe" />
-      <router-view />
-      <Footer />
+        <img src="@/assets/left-vawe.svg" alt="logo" class="left-vawe" />
+        <img src="@/assets/left-vawe.svg" alt="logo" class="right-vawe" />
+        <router-view />
+        <Footer />
+      </div>
+      <img src="@/assets/iphone-12.svg" alt="logo" class="iphone" />
     </div>
-    <img src="@/assets/iphone-12.svg" alt="logo" class="iphone" />
   </div>
 </template>
 
@@ -24,26 +25,26 @@ export default {
     Footer,
   },
   mounted() {
-    if (
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      )
-    ) {
-      // true for mobile device
-      document.getElementById("app").className = "app mobile";
-    } else {
-      // false for not mobile device
-      document.getElementById("app").className = "app desktop";
-    }
     document.getElementById("container").addEventListener("scroll", (e) => {
-      document.getElementById("container").style.backgroundPositionY =
-        0 - 65 - e.target.scrollTop + "px";
       if (e.target.scrollTop > 250) {
         document.getElementById("container").className = "container sticky";
       } else {
         document.getElementById("container").className = "container";
       }
     });
+
+    const appHeight = () => {
+      console.log("ss");
+      const doc = document.documentElement;
+      doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+    };
+    window.addEventListener("resize", appHeight);
+    appHeight();
+  },
+  methods: {
+    goToMainPage() {
+      this.$router.push("./");
+    },
   },
 };
 </script>
@@ -61,80 +62,73 @@ body::-webkit-scrollbar {
 ::-webkit-scrollbar {
   display: none;
 }
-#app {
+.app {
   font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-.ideas-foundation-logo {
-  width: 315px;
-  margin-top: 35px;
-  margin-bottom: 20px;
-}
-.container {
-  width: 376px;
-  height: 761px;
-  margin: 0 auto;
-  position: relative;
-  box-sizing: border-box;
-  overflow: scroll;
-  text-align: center;
-  padding: 0 15px;
-  background: url("./assets/background.svg");
-  background-position-y: -65px;
-  background-size: cover;
-  padding-bottom: 10px;
-}
 
-.left-vawe {
-  position: fixed;
-  top: 2px;
-  left: -2px;
-  width: 100vh;
-  transform: rotate(90deg);
-  transform-origin: 8%;
-}
-.right-vawe {
-  position: fixed;
-  bottom: 2px;
-  right: -2px;
-  width: 100vh;
-  transform: rotate(270deg) scaleX(-1);
-  transform-origin: 92%;
-}
+  .ideas-foundation-logo {
+    width: 315px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+  }
+  .container {
+    width: 376px;
+    height: 761px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    overflow: scroll;
+    text-align: center;
+    padding: 0 15px;
+    background-image: url("./assets/background.svg");
+    background-position-y: -65px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 10px;
+    background-attachment: local;
+  }
 
-.app.mobile {
-  .right-vawe,
   .left-vawe {
-    display: none;
+    position: fixed;
+    top: 2px;
+    left: -2px;
+    width: 100%;
+    transform: rotate(90deg);
+    transform-origin: 8%;
+  }
+  .right-vawe {
+    position: fixed;
+    bottom: 2px;
+    right: -2px;
+    width: 100%;
+    transform: rotate(270deg) scaleX(-1);
+    transform-origin: 92%;
+  }
+  .background-vawe {
+    width: 100%;
+    position: absolute;
+    top: -70px;
+    left: 0;
+    z-index: -1;
+  }
+  .iphone {
+    width: 423px;
+    position: absolute;
+    z-index: -2;
   }
 }
-
-.background-vawe {
-  width: 100%;
-  position: absolute;
-  top: -70px;
-  left: 0;
-  z-index: -1;
-}
-
-.iphone {
-  width: 423px;
-  position: absolute;
-  z-index: -2;
-}
-
 @media only screen and (max-width: 1440px) {
-  .app.desktop,
-  .app.mobile {
+  .app {
     .ideas-foundation-logo {
       width: 210px;
     }
     .container {
       width: 266px;
       height: 539px;
+      background-position-y: -32px;
       .background-vawe {
         width: 266px;
         top: -25px;
@@ -145,21 +139,43 @@ body::-webkit-scrollbar {
     }
   }
 }
-
-@media only screen and (max-width: 500px) {
-  #app {
-    height: 100%;
+@media only screen and (max-width: 750px) {
+  .app {
+    .left-vawe,
+    .right-vawe {
+      display: none;
+    }
   }
-  .app.mobile {
-    height: auto;
+}
+@media only screen and (min-height: 1024px) {
+  .app {
+    .left-vawe,
+    .right-vawe {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 750px) {
+  .container {
+    background-position-y: -65px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .app {
+    height: 100vh;
+  }
+  .app {
+    height: 100vh;
     .ideas-foundation-logo {
       width: 280px;
       margin-top: 35px;
+      margin-bottom: 20px;
     }
     .container {
-      width: 100%;
-      height: 100%;
-
+      width: 100vw;
+      height: 100vh;
+      min-height: -webkit-fill-available;
+      padding-bottom: 80px;
       .background-vawe {
         width: 100%;
         top: -70px;
@@ -172,21 +188,61 @@ body::-webkit-scrollbar {
 }
 @media only screen and (max-width: 750px) {
   .container {
-    // padding-bottom: 20px;
-  }
-  .app {
-    .left-vawe,
-    .right-vawe {
-      display: none;
-    }
+    background-position-y: -200px !important;
   }
 }
-
+@media only screen and (max-width: 650px) {
+  .container {
+    background-position-y: -170px !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    background-position-y: -150px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .container {
+    background-position-y: -100px !important;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .container {
+    background-position-y: -90px !important;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .container {
+    background-position-y: -65px !important;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .container {
+    background-position-y: -35px !important;
+  }
+}
 .sticky {
   background: linear-gradient(
     270deg,
     rgba(252, 143, 52, 1) 0%,
     rgba(245, 203, 107, 1) 100%
   ) !important;
+}
+
+:root {
+  --app-height: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+
+  @media not all and (hover: hover) {
+    height: var(--app-height);
+  }
 }
 </style>
