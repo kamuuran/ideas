@@ -33,6 +33,17 @@ export default {
       }
     });
 
+    window.addEventListener("scroll", () => {
+      // console.log('sss');
+      var top = window.pageYOffset || document.documentElement.scrollTop;
+      console.log(top);
+      if (top > 250) {
+        document.getElementById("container").className = "container sticky";
+      } else {
+        document.getElementById("container").className = "container";
+      }
+    });
+
     const appHeight = () => {
       console.log("ss");
       const doc = document.documentElement;
@@ -120,6 +131,23 @@ body::-webkit-scrollbar {
     z-index: -2;
   }
 }
+
+:root {
+  --app-height: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+
+  // @media not all and (hover: hover) {
+  //   height: var(--app-height);
+  // }
+}
 @media only screen and (max-width: 1440px) {
   .app {
     .ideas-foundation-logo {
@@ -162,10 +190,10 @@ body::-webkit-scrollbar {
 }
 @media only screen and (max-width: 750px) {
   .app {
-    height: 100vh;
+    height: auto;
   }
   .app {
-    height: 100vh;
+    height: auto;
     .ideas-foundation-logo {
       width: 280px;
       margin-top: 35px;
@@ -173,9 +201,9 @@ body::-webkit-scrollbar {
     }
     .container {
       width: 100vw;
-      height: 100vh;
+      height: auto;
       min-height: -webkit-fill-available;
-      padding-bottom: 80px;
+      padding-bottom: 20px;
       .background-vawe {
         width: 100%;
         top: -70px;
@@ -184,6 +212,21 @@ body::-webkit-scrollbar {
     .iphone {
       display: none;
     }
+  }
+
+  :root {
+    --app-height: auto;
+  }
+
+  html,
+  body {
+    overflow: auto;
+    width: 100vw;
+    height: auto;
+
+    // @media not all and (hover: hover) {
+    //   height: var(--app-height);
+    // }
   }
 }
 @media only screen and (max-width: 750px) {
@@ -227,22 +270,5 @@ body::-webkit-scrollbar {
     rgba(252, 143, 52, 1) 0%,
     rgba(245, 203, 107, 1) 100%
   ) !important;
-}
-
-:root {
-  --app-height: 100%;
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-
-  @media not all and (hover: hover) {
-    height: var(--app-height);
-  }
 }
 </style>
