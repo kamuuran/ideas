@@ -1,6 +1,6 @@
 <template>
   <div class="home desktop" id="home">
-    <p class="info-text-1">Make your ideas <span>alive</span></p>
+    <p class="info-text-1" id="makeYourIdeasAlive"></p>
 
     <p class="info-text-2">{{ loca.communityForTalentedEntrepreneurs }}</p>
 
@@ -34,6 +34,9 @@ export default {
     document.getElementById(
       "weOfferOurSkillsAndExperiences"
     ).innerHTML = this.loca.weOfferOurSkillsAndExperiences;
+    document.getElementById(
+      "makeYourIdeasAlive"
+    ).innerHTML = this.loca.makeYourIdeasAlive;
   },
   computed: {
     ...mapState(["loca"]),
@@ -43,6 +46,9 @@ export default {
       document.getElementById(
         "weOfferOurSkillsAndExperiences"
       ).innerHTML = this.loca.weOfferOurSkillsAndExperiences;
+      document.getElementById(
+      "makeYourIdeasAlive"
+    ).innerHTML = this.loca.makeYourIdeasAlive;
     },
   },
 };

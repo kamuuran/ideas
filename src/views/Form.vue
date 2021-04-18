@@ -203,6 +203,10 @@ export default {
   }
 }
 .input-fields {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
   width: 100%;
   height: 45px;
   background: rgba(255, 255, 255, 0.1);

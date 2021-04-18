@@ -34,13 +34,14 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  }
 })
 router.beforeEach((to, from, next) => {
   let lang = localStorage.getItem('language')
   lang = lang ? lang : "az";
-  console.log(to.params.id);
-  console.log(to.path);
   if (!to.params.id && to.path == '/') {
     next(lang);
   } else if (to.path == '/en' || to.path == '/az' || to.path == '/ru') {

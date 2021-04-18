@@ -34,9 +34,7 @@ export default {
     });
 
     window.addEventListener("scroll", () => {
-      // console.log('sss');
       var top = window.pageYOffset || document.documentElement.scrollTop;
-      console.log(top);
       if (top > 250) {
         document.getElementById("container").className = "container sticky";
       } else {
@@ -45,7 +43,6 @@ export default {
     });
 
     const appHeight = () => {
-      console.log("ss");
       const doc = document.documentElement;
       doc.style.setProperty("--app-height", `${window.innerHeight}px`);
     };
