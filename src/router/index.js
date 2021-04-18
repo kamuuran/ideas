@@ -35,8 +35,15 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior () {
-    return { x: 0, y: 0 }
+  scrollBehavior(to, from) {
+    console.log(to);
+    const toPathArray = to.path.split('/')
+    const fromPathArray = from.path.split('/')
+    if (toPathArray[1] == fromPathArray[1])
+      return {
+        x: 0, y: 0,
+      }
+
   }
 })
 router.beforeEach((to, from, next) => {
