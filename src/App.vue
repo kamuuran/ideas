@@ -233,7 +233,7 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 80%;
+  height: 60%;
   background: linear-gradient(270deg, #fb7e01 0%, #f4c453 100%);
   z-index: -1;
 }

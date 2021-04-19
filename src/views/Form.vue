@@ -242,6 +242,10 @@ export default {
 }
 
 .note {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
   width: 100%;
   height: 135px;
   background: rgba(255, 255, 255, 0.1);
