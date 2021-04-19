@@ -37,6 +37,7 @@ export default {
     document.getElementById(
       "makeYourIdeasAlive"
     ).innerHTML = this.loca.makeYourIdeasAlive;
+    document.title = "Ideas.Foundation | " + this.loca.main;
   },
   computed: {
     ...mapState(["loca"]),
@@ -47,8 +48,9 @@ export default {
         "weOfferOurSkillsAndExperiences"
       ).innerHTML = this.loca.weOfferOurSkillsAndExperiences;
       document.getElementById(
-      "makeYourIdeasAlive"
-    ).innerHTML = this.loca.makeYourIdeasAlive;
+        "makeYourIdeasAlive"
+      ).innerHTML = this.loca.makeYourIdeasAlive;
+      document.title = "Ideas.Foundation | " + this.loca.main;
     },
   },
 };

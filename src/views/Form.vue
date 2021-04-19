@@ -39,7 +39,7 @@
         name="note"
         id="note"
         class="note"
-        :placeholder="loca.youCanWriteUsAboutYourProjectsOrYouself"
+        :placeholder="loca.youCanWriteUsAboutYourProjectsOrYourself"
         v-model="note"
       ></textarea>
     </div>
@@ -81,11 +81,17 @@ export default {
                     </head>
                     <body>
                       <div style="width: 100%;">
-                        <b>Linkedin</b> : <a href="${this.linkedin}" style="color: blue;">${this.linkedin}</a><br></br>
-                        <b>Instagram</b> : <a href="${this.instagram}" style="color: blue;">${this.instagram}</a><br></br>
-                        <b>Facebook</b> : <a href="${this.facebook}" style="color: blue;">${this.facebook}</a><br></br>
-                        <b>Mail: </b>${this.mail}<br></br>
-                        <b>Note: </b>+${this.note}
+                        <b>${this.name}</b><br></br>
+                        Email: ${this.mail}<br></br><br></br>
+
+                        Linkedin : @${this.linkedin}<br></br>
+                        Instagram : @${this.instagram}<br></br>
+                        Facebook : @${this.facebook}<br></br><br></br>
+
+                        Message: <br></br>${this.note}<br></br>
+
+                        --<br></br>
+                        Make your ideas alive!
                       </div>
                     </body>
                   </html>
@@ -97,7 +103,7 @@ export default {
           Password: "NElis19930503453245",
           To: "necefzade.elish@gmail.com",
           From: "necefzade.elish@mail.ru",
-          Subject: "This is the subject",
+          Subject: "Ideas.Foundation | Request",
           Body: body,
         })
           .then((response) => {
@@ -121,6 +127,7 @@ export default {
     document.getElementById(
       "myIdeaAsGoodAsSliconValleyIdeas"
     ).innerHTML = this.loca.myIdeaAsGoodAsSliconValleyIdeas;
+    document.title = "Ideas.Foundation | " + this.loca.request;
   },
   computed: {
     ...mapState(["loca"]),
@@ -136,6 +143,7 @@ export default {
       document.getElementById(
         "myIdeaAsGoodAsSliconValleyIdeas"
       ).innerHTML = this.loca.myIdeaAsGoodAsSliconValleyIdeas;
+      document.title = "Ideas.Foundation | " + this.loca.request;
     },
   },
 };
@@ -221,10 +229,15 @@ export default {
 }
 .input-fields:focus {
   border: 1px solid #ffffff;
+  padding-left: 44px;
 }
 .form-group.social {
   .input-fields {
     padding-left: 65px;
+
+    &:focus {
+      padding-left: 64px;
+    }
   }
 }
 
@@ -241,6 +254,11 @@ export default {
   color: #ffffff;
   box-sizing: border-box;
   resize: none;
+
+  &:focus {
+    border: 1px solid #ffffff;
+    padding: 8px 14px;
+  }
 }
 
 .join-button {

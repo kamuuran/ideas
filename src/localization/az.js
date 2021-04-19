@@ -13,10 +13,12 @@ const az = {
     'about': 'Haqqımızda',
     'myIdeaAsGoodAsSliconValleyIdeas': 'Mənim ideam<br /> <span style="font-style: italic; font-size: 16px; font-weight: 800">Silicon Valley</span>-də yaranan idealardan geri qalmır!',
     'fullName': 'Ad Soyad',
-    'youCanWriteUsAboutYourProjectsOrYouself': 'Layihələriniz və bacarıqlarınız varsa qeyd edə bilərsiniz',
+    'youCanWriteUsAboutYourProjectsOrYourself': 'Layihələriniz və bacarıqlarınız varsa qeyd edə bilərsiniz',
     'amTalent': 'Mən istedadam!',
     'yourMessageIsTravellingThroughTheSpace': 'Müraciətiniz ulduzlararası səyahət edir',
     'thankYou': 'Sizə təşəkkür edirik',
+    'main': 'Əsas',
+    'request': 'Müraciət'
     // About Page // 
 }
 

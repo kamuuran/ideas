@@ -13,8 +13,9 @@
         <router-view />
         <Footer />
       </div>
-      <img src="@/assets/iphone-12.svg" alt="logo" class="iphone" />
+      <img src="@/assets/samsung.png" alt="logo" class="iphone" />
     </div>
+    <div class="fix"></div>
   </div>
 </template>
 
@@ -81,10 +82,11 @@ body::-webkit-scrollbar {
     width: 315px;
     margin-top: 35px;
     margin-bottom: 20px;
+    cursor: pointer;
   }
   .container {
     width: 376px;
-    height: 761px;
+    height: 763px;
     margin: 0 auto;
     position: relative;
     box-sizing: border-box;
@@ -123,7 +125,7 @@ body::-webkit-scrollbar {
     z-index: -1;
   }
   .iphone {
-    width: 423px;
+    width: 424px;
     position: absolute;
     z-index: -2;
   }
@@ -152,7 +154,7 @@ body {
     }
     .container {
       width: 266px;
-      height: 539px;
+      height: 540px;
       background-position-y: -32px;
       .background-vawe {
         width: 266px;
@@ -225,6 +227,16 @@ body {
     //   height: var(--app-height);
     // }
   }
+
+
+.fix {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80%;
+  background: linear-gradient(270deg, #fb7e01 0%, #f4c453 100%);
+  z-index: -1;
+}
 }
 @media only screen and (max-width: 750px) {
   .container {
@@ -263,9 +275,9 @@ body {
 }
 .sticky {
   background: linear-gradient(
-    270deg,
-    rgba(252, 143, 52, 1) 0%,
-    rgba(245, 203, 107, 1) 100%
-  ) !important;
+270deg
+, #fb7e01 0%, #f4c453 100%)
+   !important;
 }
+
 </style>

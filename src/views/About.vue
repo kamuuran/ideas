@@ -75,6 +75,8 @@
 
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "Footer",
   mounted() {
@@ -83,6 +85,16 @@ export default {
       top: 0,
       behavior: "smooth",
     });
+    document.title = "Ideas.Foundation | " + this.loca.about;
+  },
+  computed: {
+    ...mapState(["loca"]),
+  },
+
+  watch: {
+    loca() {
+      document.title = "Ideas.Foundation | " + this.loca.about;
+    },
   },
 };
 </script>

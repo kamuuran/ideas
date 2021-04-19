@@ -11,12 +11,14 @@ const ru = {
     'joinedUs': 'Наши участники:',
     'IWantToJoin': 'Хочу к вам',
     'about': 'О нас',
-    'myIdeaAsGoodAsSliconValleyIdeas': 'Мои идеи не хуже идей, созданных в Кремниевой долине',
+    'myIdeaAsGoodAsSliconValleyIdeas': 'Мои идеи<br /> не хуже идей, созданных в <span style="font-style: italic; font-size: 16px; font-weight: 800">Кремниевой долине</span>',
     'fullName': 'Имя Фамилия',
-    'youCanWriteUsAboutYourProjectsOrYouself': 'Можете написать о ваших проектах или о себе',
+    'youCanWriteUsAboutYourProjectsOrYourself': 'Можете написать о ваших проектах или о себе',
     'amTalent': 'Я талант!',
     'yourMessageIsTravellingThroughTheSpace': 'Ваше обращение путешествует по космосу',
     'thankYou': 'Спасибо',
+    'main': 'Главная',
+    'request': 'Запрос'
 }
 
 export default ru

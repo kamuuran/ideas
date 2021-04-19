@@ -60,7 +60,6 @@ export default {
   color: #ffffff;
   line-height: 28.8px;
   text-align: left;
-  margin-top: 88px;
 }
 .info-text-2 {
   font-weight: bold;
