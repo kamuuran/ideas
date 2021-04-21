@@ -11,7 +11,7 @@ const ru = {
     'joinedUs': 'Наши участники:',
     'IWantToJoin': 'Хочу к вам',
     'about': 'О нас',
-    'myIdeaAsGoodAsSliconValleyIdeas': 'Мои идеи<br /> не хуже идей, созданных в <span style="font-style: italic; font-size: 16px; font-weight: 800">Кремниевой долине</span>',
+    'myIdeaAsGoodAsSliconValleyIdeas': 'Мои идеи<br /> не хуже идей, созданных в <br /><span style="font-style: italic; font-size: 16px; font-weight: 800">Кремниевой долине</span>',
     'fullName': 'Имя Фамилия',
     'youCanWriteUsAboutYourProjectsOrYourself': 'Можете написать о ваших проектах или о себе',
     'amTalent': 'Я талант!',
