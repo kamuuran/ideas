@@ -7,7 +7,7 @@ const ru = {
     'copyright': `Все права защищены © 2020-${getYear()}`,
     'makeYourIdeasAlive': 'Оживите свои <span style="font-style: italic; font-weight: 800">идеи</span>',
     'communityForTalentedEntrepreneurs': 'Сообщество для талантливых предпринимателей',
-    'weOfferOurSkillsAndExperiences': 'Мы, <span>Ideas.Foundation</span>, предлагаем наши навыки и опыт для реализации ваших идей',
+    'weOfferOurSkillsAndExperiences': 'Мы, <span style="font-style: italic; font-weight: 800">Ideas.Foundation</span>, предлагаем наши навыки и опыт для реализации ваших идей',
     'joinedUs': 'Наши участники:',
     'IWantToJoin': 'Хочу к вам',
     'about': 'О нас',
