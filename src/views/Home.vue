@@ -10,7 +10,7 @@
 
     <div>
       <a href="https://follow.az" target="_blank">
-        <img src="@/assets/followaz.svg" alt="logo" class="follow-az"
+        <img width="192" height="51" src="@/assets/followaz.svg" alt="logo" class="follow-az"
       /></a>
     </div>
 
