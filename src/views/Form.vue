@@ -98,13 +98,14 @@ export default {
 `;
 
         Email.send({
-          SecureToken : "b84c7550-559a-4360-b33c-14e12086c3f2",
-          To: "necefzade.elish@gmail.com",
+          SecureToken : "0e07a211-6526-44c4-97cf-ea89185f3240",
+          To: "founder@ideas.foundation",
           From: "founder@ideas.foundation",
           Subject: "Ideas.Foundation | Request",
           Body: body,
         })
           .then((response) => {
+            console.log(response);
             this.loading = false;
             if (response == "OK") {
               this.$router.push("finish");
