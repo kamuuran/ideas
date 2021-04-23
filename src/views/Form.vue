@@ -98,11 +98,9 @@ export default {
 `;
 
         Email.send({
-          Host: "smtp.mail.ru",
-          Username: "necefzade.elish@mail.ru",
-          Password: "NElis19930503453245",
+          SecureToken : "b84c7550-559a-4360-b33c-14e12086c3f2",
           To: "necefzade.elish@gmail.com",
-          From: "necefzade.elish@mail.ru",
+          From: "founder@ideas.foundation",
           Subject: "Ideas.Foundation | Request",
           Body: body,
         })
@@ -112,7 +110,8 @@ export default {
               this.$router.push("finish");
             }
           })
-          .catch(() => {
+          .catch((e) => {
+            console.log(e);
             this.loading = false;
           });
       }

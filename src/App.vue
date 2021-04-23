@@ -104,7 +104,7 @@ body::-webkit-scrollbar {
   .left-vawe {
     position: fixed;
     top: 2px;
-    left: -2px;
+    left: -10px;
     width: 100%;
     transform: rotate(90deg);
     transform-origin: 8%;
@@ -112,7 +112,7 @@ body::-webkit-scrollbar {
   .right-vawe {
     position: fixed;
     bottom: 2px;
-    right: -2px;
+    right: -10px;
     width: 100%;
     transform: rotate(270deg) scaleX(-1);
     transform-origin: 92%;
