@@ -99,8 +99,9 @@ export default {
 footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   margin-top: 25px;
+  margin-bottom: 10px;
   a {
     color: #ffffff;
     text-decoration: none;
@@ -108,7 +109,7 @@ footer {
   .flag-and-about-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     a {
       color: white;
     }
@@ -119,7 +120,8 @@ footer {
     justify-content: space-between;
     align-items: center;
   }
-  span, a {
+  span,
+  a {
     font-weight: 500;
     font-size: 10px;
     color: #ffffff;
@@ -135,10 +137,27 @@ footer {
     border-radius: 8px;
     margin-left: 15px;
     cursor: pointer;
+    position: relative;
+    top: 6px;
     .flag {
       width: 17px;
       height: 12px;
     }
+  }
+}
+@media only screen and (max-width: 1440px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 750px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 }
 </style>
