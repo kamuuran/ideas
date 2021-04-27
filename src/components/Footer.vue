@@ -1,9 +1,15 @@
 <template>
   <footer>
     <div>
-      <img src="@/assets/instagram.svg" alt="avatar" />
-      <img src="@/assets/facebook.svg" alt="avatar" />
-      <span>info@ideas.foundation</span>
+      <div class="social-media-container">
+        <a href="https://instagram.com/ideas.foundation/ " target="_blank"
+          ><img src="@/assets/instagram.svg" alt="avatar"
+        /></a>
+        <a href="https://facebook.com/www.ideas.foundation" target="_blank"
+          ><img src="@/assets/facebook.svg" alt="avatar"
+        /></a>
+        <a href="mailto: info@ideas.foundation">info@ideas.foundation</a>
+      </div>
       <span>{{ loca.copyright }}</span>
     </div>
     <div class="flag-and-about-container">
@@ -95,6 +101,10 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 25px;
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
   .flag-and-about-container {
     display: flex;
     justify-content: space-between;
@@ -103,7 +113,13 @@ footer {
       color: white;
     }
   }
-  span {
+  .social-media-container {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  span, a {
     font-weight: 500;
     font-size: 10px;
     color: #ffffff;
