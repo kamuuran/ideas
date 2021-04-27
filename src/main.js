@@ -8,7 +8,7 @@ import VueAnalytics from 'vue-analytics';
 Vue.config.productionTip = false
 
 Vue.use(VueAnalytics, {
-  id: 'UA-12345678-1',
+  id: '172424383',
   router
 })
 
