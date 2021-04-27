@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div>
+    <div style="display-flex; ">
       <div class="social-media-container">
         <a href="https://instagram.com/ideas.foundation/ " target="_blank"
           ><img src="@/assets/instagram.svg" alt="avatar"
@@ -10,7 +10,7 @@
         /></a>
         <a href="mailto: info@ideas.foundation">info@ideas.foundation</a>
       </div>
-      <span>{{ loca.copyright }}</span>
+      <p>{{ loca.copyright }}</p>
     </div>
     <div class="flag-and-about-container">
       <span
@@ -109,7 +109,6 @@ footer {
   .flag-and-about-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
     a {
       color: white;
     }
@@ -117,28 +116,28 @@ footer {
   .social-media-container {
     margin-bottom: 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 15px;
   }
-  span,
+  p,
   a {
     font-weight: 500;
     font-size: 10px;
     color: #ffffff;
+    text-align: left;
   }
 
   .flag-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 26px;
+    width: 47px;
+    height: 28px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     margin-left: 15px;
     cursor: pointer;
-    position: relative;
-    top: 6px;
     .flag {
       width: 17px;
       height: 12px;
