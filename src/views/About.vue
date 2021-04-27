@@ -10,21 +10,8 @@
       <span>İdeas.Foundation</span> Azərbaycanda bacarıqlı təşəbbüskarların
       ideyalarını həyata keçirmək üçün yaradılan layihə, cəmiyyət, fonddur.
     </p>
-
-    <p class="info-text-1-title">Nədən başlamalısınız?</p>
-    <p class="info-text-1-content">
-      İlk öncə fikrinizdə tutduğunuz ideyanın məqsədini bilməlisiniz. Bizimlə
-      müzakirə edə və yaxud məsləhət ala bilərsiniz <br /><br />
-
-      Daha sonra <span>arzularınızın</span> icrası üçün sizə tələb olunan
-      komanda üzvlərinin, Developer, Designer, SMM manager, Business analyst və
-      s. yığılmasında yardımçı oluruq<br /><br />
-
-      İdeyanın təqdimat üçün yetərli versiyasını investorlara təqdim etmək
-      imkanı yarada bilərik
-    </p>
-
-    <p class="info-text-1-title">Sizin marağınız nədir??</p>
+    
+    <p class="info-text-1-title">Bizim marağımız nədir??</p>
     <p class="info-text-1-content">
       Biz 2000-ci illərin əvvəlindən bir çox şəxsi layihələrin yaradıcıları,
       qeyri adi Start Up-ların təməlini qoymuşuq<br /><br />
@@ -43,7 +30,21 @@
       <li>Təbii ki cuzi bir pay sahibi olmaq</li>
     </ul>
 
-    <p class="info-text-1-title">İdeyamı mənimsəyə bilərsiniz??</p>
+    <p class="info-text-1-title">Nədən başlamalısınız?</p>
+    <p class="info-text-1-content">
+      İlk öncə fikrinizdə tutduğunuz ideyanın məqsədini bilməlisiniz. Bizimlə
+      müzakirə edə və yaxud məsləhət ala bilərsiniz <br /><br />
+
+      Daha sonra <span>arzularınızın</span> icrası üçün sizə tələb olunan
+      komanda üzvlərinin, Developer, Designer, SMM manager, Business analyst və
+      s. yığılmasında yardımçı oluruq<br /><br />
+
+      İdeyanın təqdimat üçün yetərli versiyasını investorlara təqdim etmək
+      imkanı yarada bilərik
+    </p>
+
+
+    <p class="info-text-1-title">İdeyamı mənimsəyə bilərsiniz?</p>
     <p class="info-text-1-content">
       Bizim qətiyyən mənimsəmək fikrimiz yoxdur<br /><br />
 
