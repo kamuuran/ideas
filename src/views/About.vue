@@ -81,6 +81,7 @@ import { mapState } from "vuex";
 export default {
   name: "Footer",
   mounted() {
+    this.$ga.page('/about');
     var divElement = document.getElementById("container");
     divElement.scroll({
       top: 0,
