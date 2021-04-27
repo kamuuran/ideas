@@ -11,7 +11,7 @@
       ideyalarını həyata keçirmək üçün yaradılan layihə, cəmiyyət, fonddur.
     </p>
     
-    <p class="info-text-1-title">Bizim marağımız nədir??</p>
+    <p class="info-text-1-title">Bizim marağımız nədir?</p>
     <p class="info-text-1-content">
       Biz 2000-ci illərin əvvəlindən bir çox şəxsi layihələrin yaradıcıları,
       qeyri adi Start Up-ların təməlini qoymuşuq<br /><br />
