@@ -1,8 +1,15 @@
 <template>
   <footer>
-    <span>{{ loca.copyright }}</span>
+    <div>
+      <img src="@/assets/instagram.svg" alt="avatar" />
+      <img src="@/assets/facebook.svg" alt="avatar" />
+      <span>info@ideas.foundation</span>
+      <span>{{ loca.copyright }}</span>
+    </div>
     <div class="flag-and-about-container">
-      <span><router-link to="about">{{ loca.about }}</router-link></span>
+      <span
+        ><router-link to="about">{{ loca.about }}</router-link></span
+      >
       <div class="flag-container" @click="changeLang(1)">
         <img
           class="flag"
