@@ -44,7 +44,7 @@
     </p>
 
 
-    <p class="info-text-1-title">İdeyamı mənimsəyə bilərsiniz?</p>
+    <p class="info-text-1-title">İdeyanı mənimsəyə bilərikmi?</p>
     <p class="info-text-1-content">
       Bizim qətiyyən mənimsəmək fikrimiz yoxdur<br /><br />
 
@@ -55,7 +55,7 @@
     <div class="quote-container">
       <img src="@/assets/quote-open.svg" alt="avatar" />
       <p class="info-text-1-content">
-        İstəyimiz, sağlam mühid içində təşəbbüskarlağı yetişdirməkdir.
+        İstəyimiz, sağlam mühid içində təşəbbüskarlığı yetişdirməkdir.
         Azərbaycanda istedadlı şəxslərin olduğuna əminik
       </p>
       <img src="@/assets/quote-close.svg" alt="avatar" />
