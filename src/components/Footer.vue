@@ -118,7 +118,9 @@ footer {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 15px;
+    a {
+      margin-right: 15px;
+    }
   }
   p,
   a {
